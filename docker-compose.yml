@@ -1,0 +1,43 @@
+app_lua:
+  build: nginx
+  ports:
+    - "8080:8080"
+  links:
+    - db_master
+    - db_slave
+
+db_master:
+  restart: always
+  image: sameersbn/postgresql:9.4-11
+  environment:
+    - DEBUG=false
+
+    - DB_USER=user1
+    - DB_PASS=password1
+    - DB_NAME=db1
+
+    - DB_UNACCENT=false
+
+    - REPLICATION_MODE=master
+    - REPLICATION_USER=replicator
+    - REPLICATION_PASS=replpassword
+    - REPLICATION_SSLMODE=
+  ports:
+    - "5432"
+  volumes:
+    - /tmp/docker/postgresql:/var/lib/postgresql
+
+db_slave:
+  restart: always
+  image: sameersbn/postgresql:9.4-11
+  links:
+    - db_master:master
+  environment:
+    - DEBUG=false
+
+    - REPLICATION_MODE=slave
+    - REPLICATION_HOST=master
+    - REPLICATION_USER=replicator
+    - REPLICATION_PASS=replpassword
+  ports:
+    - "5432"
