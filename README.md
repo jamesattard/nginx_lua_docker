@@ -36,10 +36,10 @@ docker-compose up -d app_lua
 
 Send a POST request to the app server:
 ````bash
-docker exec -it nginxlua_app_lua_1 curl -X POST http://localhost:8080/post?title=Article1\&body=body1
+docker exec -it nginxluadocker_app_lua_1 curl -X POST http://localhost:8080/post?title=Article1\&body=body1
 ```
 
 Get the last 100 messages from the database:
 ````bash
-docker exec -it nginxlua_app_lua_1 curl http://localhost:8080/get
+docker exec -it nginxluadocker_app_lua_1 curl http://localhost:8080/get
 ```
