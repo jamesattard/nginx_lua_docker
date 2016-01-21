@@ -28,7 +28,7 @@ Start the containers using:
 ````bash
 docker-compose up -d db_master
 docker-compose up -d db_slave
-docker-compose up -d nginx_lua
+docker-compose up -d app_lua
 ```
 
 Send a POST request to the app server:
