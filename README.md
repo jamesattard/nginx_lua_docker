@@ -10,9 +10,12 @@
 This is an nginx-lua based simple application based on docker. There is an nginx with lua on the front end, and two postgresql databases setup as master-slave on the backend. This is a private build, not found in DockerHub and author assumes no responsibility. It was part of a technical interview that the author decided to spice it up a bit using Docker.
 
 ## Tech
-I am using the following Docker containers:
-- Official Centos image to build Nginx and compile Lua
-- Sameersbn PostgreSQL image to build a master-slave postgresql cluster
+I used the following Docker images:
+- Official Centos image (centos7) to build Nginx and compile Lua
+- PostgreSQL image (sameersbn/postgresql:9.4-11) to build a master-slave postgresql cluster
+
+I have also used OpenResty (openresty.org) as a web platform that integrates nginx wih lua core and other lua libs.
+
 
 # Getting started
 
