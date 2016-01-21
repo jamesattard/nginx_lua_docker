@@ -19,7 +19,7 @@ I am using the following Docker containers:
 ## Installation
 
 ````bash
-git pull https://github.com/jamesattard/nginx_lua_docker.git
+git clone https://github.com/jamesattard/nginx_lua_docker.git
 ```
 
 ## Quickstart
