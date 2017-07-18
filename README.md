@@ -21,25 +21,25 @@ I have also used OpenResty (openresty.org) as a web platform that integrates ngi
 
 ## Installation
 
-````bash
+```sh
 git clone https://github.com/jamesattard/nginx_lua_docker.git
 ```
 
 ## Quickstart
 
 Start the containers using:
-````bash
+```sh
 docker-compose up -d db_master
 docker-compose up -d db_slave
 docker-compose up -d app_lua
 ```
 
 Send a POST request to the app server:
-````bash
+```sh
 docker exec -it nginxluadocker_app_lua_1 curl -X POST http://localhost:8080/post?title=Article1\&body=body1
 ```
 
 Get the last 100 messages from the database:
-````bash
+```sh
 docker exec -it nginxluadocker_app_lua_1 curl http://localhost:8080/get
 ```
